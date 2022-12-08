@@ -1,0 +1,162 @@
+import java.io.*;
+import java.util.*;
+public class My{
+    public static void main(String args[]){
+        int pin = 1294; //pin number
+        int balance = 5000; //Initial Account Balance 
+        System.out.println("WELCOME TO RIYA BANK..");
+        System.out.println("Select your Language:");
+        System.out.println("1.ENGLISH    2.TAMIL"); //Language Selection
+        //System.out.println("அம்மா டாடா..");
+        Scanner sc = new Scanner(System.in);
+        int l = sc.nextInt();
+        int i;
+        if(l==1){  // if selected language is english
+            System.out.println("Enter your PIN Number");
+            int pwd= sc.nextInt();
+            if(pwd==pin){
+                do{
+               
+                System.out.println("Select your Choice:");
+                System.out.println("1.BALANCE ENQUIRY       2.CASH DEPOSIT");
+                System.out.println("3.CASH WITHDRAWAL       4.EXIT");
+                int ch = sc.nextInt();
+                switch(ch){
+                    case 1:
+                        System.out.println("Available Balance:"+balance);
+                        break;
+                    case 2:
+                        System.out.println("CASH DEPOSIT");
+                        System.out.println("Enter the Amount you want to Deposit");
+                        int d = sc.nextInt();
+                        balance = balance + d; //Adding the deposited amount to balance
+                        System.out.println("Amount deposited Successfully");
+                        System.out.println("Do you want to display the balance amount on the Screen");
+                        System.out.println("1.YES      2.NO");
+                        int y1 = sc.nextInt();
+                        if(y1==1){
+                                System.out.println("Your Available Balance Amount is:"+balance);
+                        }
+                        if(y1==2){
+                                break;
+                        }
+                        break;
+                    case 3:
+                        System.out.println("CASH WITHDRAWAL");
+                        System.out.println("Enter the Amount you want to withdraw:");
+                        int w = sc.nextInt();
+                        int ans = balance - w;
+                        if(ans<1500){
+                            System.out.println("Minimum Balance Amount Reached..Can't withdraw money");
+                        }
+                        else{
+                            balance = balance - w;
+                            System.out.println("Do you want to display the balance amount on the Screen");
+                            System.out.println("1.YES      2.NO");
+                            int y = sc.nextInt();
+                            if(y==1){
+                                System.out.println("Your Available Balance Amount is:"+balance);
+                            }
+                            if(y==2){
+                                break;
+                            }
+                            
+                        }
+                        break;
+                    case 4:
+                        System.out.println("Thankyou for using RIYA Bank Services");
+                        break;
+                    default:
+                        System.out.println("Enter the correct choice");
+                        break;
+                        
+                }
+                System.out.println("Do you want to continue using  ?If Yes Press 1");
+                
+                 i = sc.nextInt();
+            }while(i==1);
+            }
+            else{
+                System.out.println("Enter the correct PIN Number.. TRY AGAIN");
+                
+                
+            }
+            
+            
+        }
+        else{
+           // System.out.println("TAMIL");
+            System.out.println("உங்கள் பின் எண்ணை உள்ளிடவும்");
+            int pwd= sc.nextInt();
+            if(pwd==pin){
+                do{
+               
+                System.out.println("உங்கள் விருப்பத்தைத் தேர்ந்தெடுக்கவும்:");
+                System.out.println("1.இருப்பு விசாரணை     2.பண வைப்பு")          ;  
+                System.out.println("3.பணம் எடுத்தல்    4.வெளியேறு")         ;  
+                int ch = sc.nextInt();
+                switch(ch){
+                    case 1:
+                        System.out.println("வங்கி கணக்கில் மிச்சம் இருக்கும் தொகை:"+balance);
+                        break;
+                    case 2:
+                        System.out.println("பண வைப்பு");
+                        System.out.println("நீங்கள் டெபாசிட் செய்ய விரும்பும் தொகையை உள்ளிடவும்");
+                        int d = sc.nextInt();
+                        balance = balance + d; //Adding the deposited amount to balance
+                        System.out.println("தொகை வெற்றிகரமாக டெபாசிட் செய்யப்பட்டது");
+                        System.out.println("மீதமுள்ள தொகையை திரையில் காட்ட விரும்புகிறீர்களா");
+                        System.out.println("1.ஆம்    2.இல்லை"); 
+                        int y1 = sc.nextInt();
+                        if(y1==1){
+                                System.out.println("உங்கள் இருப்புத் தொகை:"+balance);
+                        }
+                        if(y1==2){
+                                break;
+                        }
+                        break;
+                    case 3:
+                        System.out.println("பணம் எடுத்தல்");
+                        System.out.println("நீங்கள் திரும்பப் பெற விரும்பும் தொகையை உள்ளிடவும்:");
+                        int w = sc.nextInt();
+                        int ans = balance - w;
+                        if(ans<1500){
+                            System.out.println("மினிமம் பேலன்ஸ் தொகையை அடைந்து விட்டது..பணம் எடுக்க முடியாது");
+                        }
+                        else{
+                            balance = balance - w;
+                            System.out.println("மீதமுள்ள தொகையை திரையில் காட்ட விரும்புகிறீர்களா");
+                            System.out.println("1.ஆம்    2.இல்லை"); 
+                            int y = sc.nextInt();
+                            if(y==1){
+                                System.out.println("உங்கள் இருப்புத் தொகை:"+balance);
+                            }
+                            if(y==2){
+                                break;
+                            }
+                            
+                        }
+                        break;
+                    case 4:
+                        System.out.println("RIYA வங்கி சேவைகளைப் பயன்படுத்தியதற்கு நன்றி");
+                        break;
+                    default:
+                        System.out.println("சரியான தேர்வை உள்ளிடவும்");
+                        break;
+                        
+                }
+                System.out.println("நீங்கள் தொடர்ந்து பயன்படுத்த விரும்புகிறீர்களா? ஆம் எனில் 1 ஐ அழுத்தவும்");
+                
+                 i = sc.nextInt();
+            }while(i==1);
+            }
+            else{
+                System.out.println("Enter the correct PIN Number.. TRY AGAIN");
+                
+                
+            }
+            
+            
+        }
+    }
+}
